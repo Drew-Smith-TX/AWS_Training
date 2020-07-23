@@ -1,0 +1,30 @@
+Flexibility, Security, Cost Effeciency, Scalability
+
+Compute, Storage, Database, Network
+
+Storage Area Network(SAN)
+
+Network Attached Storage (NAS)
+
+Directly Attached Storage (DAS)
+
+Tape Backup
+
+Different Benefits and features provided per cost point
+
+Data storage Categorization
+    Block Storage:
+        - Data is stored in chunks, known as blocks
+        - Blocks are stored on a volume and attached to a single instance
+        - Provides very low latency data access
+        - Comparable to DAS used on premises
+    File Storage
+        - Data is stored as a seperate files with a series of directories
+        - Data is stored within a file system
+        - Shared access is provided for multiple users
+        - Comparable to NAS
+    Object Storage
+        - stored across a flat address space
+        - Objects referenced by a unique key
+        - can have metadata to help categorize and identify the Object
+        

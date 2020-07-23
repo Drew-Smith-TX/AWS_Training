@@ -1,0 +1,102 @@
+S3
+Fully managed object based storage service, available, durable, unlimited,
+widely and easily accessible, unlimited storage capacity, highly scalable
+    - smallest file size is 0 bytes
+    - largest file size is 5 TB
+    - regional based": upload object based on region
+Durability
+    - have a durability of 99.99 %
+    - s3 stores numerous copies of the same data
+    - amazon ensures the uptime of s3 is 99.9999%
+    - probablity of maintaining data 
+S3 Buckets
+    - Objects are stored in s3 Buckets
+    - bucket name must be unique
+    - Data can be uploaded into buckets or folders
+    - Limitiation of 100 buckets per aws key
+    - Objects have a unique object key identifying that object
+    - Not a file system, work at bucket leve, not folder level
+storage Classes
+    - Standard
+    - Standard IA (Infrequent Access)
+    - Intelligent Tiering
+    - One Zone Access(Infrequent)
+    - Reduced Redudancy storage RRS
+Frequently Accessed Options
+    - Standard and Reduced Redudancy storage
+    - Standard is the default
+    - RRS is no longer recomended
+Infrequently Access
+    - Standard ia and one Zone IA
+    - Offer the same access speed to that of Standard
+    - Additional cost to retrieve data
+    - One Zone IA does not replicate data across multiple zones
+    - Should only be used for data that can be reused
+    - More cost effective than Standard
+Intelligent Tiering
+    - used for unpredicatable access patterns
+    - consists of 2 tiers: Frequently and Infrequently
+    - Automatically moves data into appropriate tier based on access patterns
+    - Objects must be larger than 128 kb
+storage Classes
+    - How often is it accessed?
+    - How critical is my data?
+    - How reproducible is the data?
+    - Can it be easily created again if need be?
+    - Do i know the access patterns of my data
+Security
+    * Bucket Policies
+        -Impose set access controls within a specific bucket
+        - Constructed as JSON Policies
+        - Only control access to the data in the associated bucket
+        - Permissions can be very specific using policy conditions
+        - Provide added granularity to buckets access
+    * Access Control Lists
+        - control access for users outside of your own AWS account, such as 
+          public access
+        - ACLS and not as granular as bucket Policies
+        - Permissions are broad in access, list objects and write objects
+    * Data Encryption
+        - Server Side Encryption and Client Side Encryption
+        - SSE3 (S3 managed keys)
+        - SSE-KMS (KMS managed keys) Key management service
+        - SSE-C Customer managed keys
+        - CSE-KMS (KMS managed keys)
+        - CSE-C (Customer managed keys)
+        - SSL is supported
+    * Data management
+        - Versioning, allows for multiple versions of the same object to exist
+        - Usefult to recover from accidental deletion, or malicious activity
+        - Only the latest version is displayed by default
+        - Versioning is not enabled by default
+        - You can disable Versioning
+        - Adds a cost for storing multiple versions 
+    * Lifecycle Rules
+        - Provides and automatic method of managing the lifecycle of your data stored
+        - configure specific criteria to automatically move between data storage Classes
+          including glacier or or even delete the data completely
+        - time frame is configurable
+Static Content and Websites
+    - S3 is perfect for storing static Content
+    - Any object can be made public and referenced by url 
+    - Amazon Cloud Front interacts closely with Amazon s3
+    - Entire static websites can be hosted on S3
+Large Data Sets 
+    - Computational
+    - Scientific
+    - Mathematical
+    - cost effective means of sharing data with a number of people
+EBS
+    - can create a backup stored on S3, managed by AWS
+AWS Cloud Trail
+    - request are logged and stored, API calls are recorded as event and 
+      stored on s3
+AMazon cloud Front
+    - s3 buckets can be used as a CloudFront origin within a distribution
+Data transfer into S3 is free
+Data transfor out of S3 is .02 gb
+S3 Anti patterns
+    - not ideal for archiving long term
+    - not dynamic and fast changing data
+    - file system reqs 
+    - structured data with queries

@@ -1,0 +1,30 @@
+AWS batch is used to manage and run batch computing
+    - primarily used in specialist cases which require a vast amount of computer
+      power across a cluster of resources to complete
+    - provisioning is taken care of by AWS
+5 components of AWS Batch service
+    - job: executable file
+    - run on EC2 instance as container application
+    - jobs can have different states as submitted, pending, running, failed, executable
+Definitions
+    - How many vCpus to use
+    - data volumes
+    - iam role to access aws batch to communicate
+    - mount points
+Job Queues
+    - jobs scheduled are placed into a Queues
+    - can have multiple queues.
+    - on demand and spot instances are supported
+    - AWS batch can bid on instances
+Job Scheduler 
+    - takes care of when a job should be run and from which environment
+    - typically a FIFO basis
+    - High priority queues are run first
+Environment 
+    * Managed
+        - service will handle provisioning, scaling, and termination fo compute instances
+        - Environment is created as an ECS cluster
+    * Unmanaged
+        - provisioneinstancesd and maintained by you
+        - gives great customization, but requires great administration and maintenance
+        - requires you to create the ecs cluster

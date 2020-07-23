@@ -1,0 +1,32 @@
+Lambda
+    -Serverless computerr service that allows you to run your application
+     without having to manage EC2 instances
+    - no need to worry about provisioning, managing your own resource to run your
+      code, managed by AWS 
+    - AWS user does not neec to be concerned with what managing this compute power or where its provisioned from,
+      its considered serverless 
+    - Only pay for compute powere per 100ms of use 
+
+4 steps in operation
+    - upload code to lambda, write it within code editors lambda provides.  Node.js,
+      Java, C#, Pyton, Go, Powershell, and RUBy
+    - Configure Lambda to execute upon specific trigger from events, such as an s3 events
+    - Lambda will run your code, using only the compute power as defined
+    - AWS records the compute time in millisecond and the quantity of Lambda functions
+      run to ascertain the cost of service
+Components of AWS  Lambda
+    Lambda Function - compiled of your own code that you want lambda to invoke
+    Event Sources - AWS services that can be used to trigger lambda functions
+    Trigger - an operation from an event sources that causes function to invoke
+    Resources: resources that are required for the execution
+    Log Streams: help to identify issues with function, essentially events recorded
+                 in cloud watch
+                
+Creating Lambda functions
+    - AWS Management Console    
+        - Select A blueprint
+        - s3 get object
+    - Configure triggers, operation from event sources
+    - Configure functions, resources, max execution timeout, IAM Role and handler
+    - AWS lambda is highly scalable
+    

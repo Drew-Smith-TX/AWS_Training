@@ -1,0 +1,37 @@
+Snowball
+    - used to securely transfer large amounts of data in and out of AWS
+    - From on premise data center to Amazon s3, or s3 back to data center
+    - appliance comes as either a 50tb or 80tb device
+    - dust, water, and tamper resistant
+Built for high speed transfer
+    -rj45
+    -sfp+ copper
+    - sfp+ optical
+All data is automatically encrypted
+    - end to end using E-Ink shipping label
+    - assists with correct AWS premises
+    - snowball can be tracked with SNS(simple notifaction service),
+      text message or AWS Mgmt Console
+    - also HIPAA compliant 
+    - Data removal is the responsibility of AWS, confirming to NIST standards
+Data Aggregation
+    - can use multiple snowballs to transfer more data 
+If data retrieval will take more than a week, consider snowball
+
+To retrieve data
+    - create an export job from Console
+    - recieve delivery of appliance
+    - connect to network
+    - power on, configure network settings
+    - start transferring data
+    - access credentials
+    - install snowball client
+    - transfer data using client
+    - disconnect appliance when the data transfer is complete
+Return snowball appliance to AWS
+Data transferred in does not charge, only coming out
+charge + shipping cost
+50TB snowball = 200
+Included in the cost is provision of snowball for 10 days
+shipping varies
+Y

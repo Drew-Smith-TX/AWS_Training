@@ -1,0 +1,51 @@
+Similiar to s3
+    - fraction of the cost of storing data
+    - does not provide instant access
+    - long term durable storage, archival and backup
+    - just as durable as S3, across multiple zones in same region
+    - retrievel can take several hours
+Vaults and Archives
+    - Vaults act as a container for glacier Archives
+    - Vaults are regional
+    - Archives can be any object, movie, documents, whatever
+    - Unlimited Archives
+    - Glacier dashboard only allows you to create Vaults
+    * Any operational process to upload or retrive data has to be done using code
+        - Glacier API
+        - AWS SDKs
+Moving data into Glacier
+    - Create your Vaults
+    - move data into vault via api/SDKs
+    - s3 lifecyle rule
+Data retrievel
+    - must first create an acess retrievel request
+        * Expedited
+            - used for urgent access to a subset of an Archives
+            - less than 250 mb
+            - data available with 1-5 minutes
+            - cost: .03 per GB .01 per request
+        * Standard
+            - 4-5 hours
+            - Cost: .01 per GB, .05 per 1000 requests
+        * Bulk
+            - retrieve petabytes of data at a time
+            - 5-12 hours
+            - cheapest option 
+            - .0025 per GB, .025 per 1000 requests 
+*Encryption
+    - Data is encrypted by AES-256
+    * Vault access policies
+        - Resource based
+        - applied to specific vault
+        - each vault can only contain 1 vault access policy
+        - policy is json format
+        - policy contains a principal component
+    * Vault lock policies
+        - once set, they cannot be changed
+        - used to help maintain specific governance and compliance controls
+*Pricing
+    - glacier offers a single storage cost regardless of how much storage is used
+    - price varies from region to region
+    - London Region: .0045 GB
+    - Data transfer in is free
+    - Transfer out is .02 per GB

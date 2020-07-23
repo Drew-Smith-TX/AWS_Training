@@ -1,0 +1,23 @@
+Elastic file system
+    -provides a file level storage
+    - fully managed
+    - highly available and durable
+    - ability to create shared file systems
+    - highly scalable
+    - concurrency access
+    - limitless capacity
+Allows parallel access of data across zones
+Not available within all regions
+EFS Does not support Windows OS
+Max 7000 file system operations per second
+
+Consider MAXIO if exceed 7000 file system operation per second
+
+EFS provides PercentIOlimit as a cloud watch matrix that allows you view 
+operations per second should limit be reached
+
+Moving data into EFS can be done by using EFS file sync
+
+Charged for data consumption per GB-month
+
+Not suited for Data Archiving or Relational Databases, Temporary Storage

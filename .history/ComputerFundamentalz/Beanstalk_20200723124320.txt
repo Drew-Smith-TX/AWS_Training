@@ -1,0 +1,77 @@
+AWS Elastic Beanstalk
+AWS Elastic Beanstalk is and AWS managed service that take your uploaded code of
+you web application code and automatically provision and deploys the 
+required resources within AWS to make the application operational
+    -resource include EC2, Auto Scaling, application health-monitoring and 
+     elastic load balancing, in addition to capacity provisioning'
+An ideal service for engineers who may not have the familiarity or the skills within
+AWS to deploy, provision, montitor, and scale the correct environment to run
+developed applications.
+
+Responsibilitty is passed to AWS Beanstalk to depoloy the correct ingrastructure.
+You can continue to support and maintain the environment as you would with a custom
+build environment.
+
+Perform some maintenance task from elastic Beanstalk dashboard
+
+AWS is able to operate with a variety of platforms and languages
+ -packer build
+ - single docker
+ - multi docker
+ - preconfigured docker
+ - go
+ - java se 
+ - java with tomcat.net on windows server with iis
+ - node.js
+ - php
+ - python
+ - ruby
+ Service is free to use
+
+ Application version
+    - specific reference to section of deployable code
+    - version will point typically to s3, simple storage service to where the
+      deployable code may reside
+environment
+    -refers to an application that has been deployed on AWS resources and provisioned
+     by AWS Elastic Beanstalk
+     - application is deployed as a solution and becomes operational within your
+       environment
+    - environment is comprise off all resources created by elastic beanstalk, not just
+      an ec2 instance with your uploaded code
+environment Configurations
+    - collection of parameters and settings that will have its resources provisioned
+      by elastic beanstalk and behavior
+Environment Tier
+    - 2 types
+    - Web server environment
+    - Worker environment
+Configuration Template
+    - template that provides the baseline for creating a new, enique, environment 
+      Configurations
+Platform is a culmination of components in which you can build your application
+upon using Elastic Beanstalk
+    - comprise of OS, language, server type, and components of Elastic Beanstalk 
+      itself, and as a whole can be defined.
+An application is a collection of different elements, such as environments, 
+Configurations and application versions
+Web server
+    - typically used for standard web apps that operate and serve requests over http and port 8-0
+    - route 53
+    - elastic load balancing
+    - auto Scaling
+    - ec2 
+    - security groups
+Worker Environment
+    - used by applications that will have a back end processing task
+    - sqs
+    - iam service role
+    - auto Scaling
+    -EC2
+4 steps of Elastic Beanstalk
+    - Create Application
+    - upload version
+    - launch environment
+    - manage environment
+Deploy php application using AWS Beanstalk lab 26 and 43
+    

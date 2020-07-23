@@ -1,0 +1,70 @@
+EBS
+    - Provides block level storage to EC2 instances
+    - persistant and durable data storage
+    - greater flexibilility than that of instance store volumes
+    - EBS volumes can be attached to EC2 instances for raplidly changing data
+    - used to retain valuable data due to persistant qualities
+    - essential data is encrypted
+    - independant of ec2 instances
+    - EBS volumes act as network attached storage
+    - each volume can only be attached to one ec2 instance
+    - multiple EBS volumes can be attached to a single EC2 instance
+EBS Snapshot offer point in time back ups as needed
+    - manually invoke backup or schedule
+    - incrementally updated
+    - can recreate from existing Snapshot
+    - possible to copy from one region to another
+EBS Volume Types
+    - SSD and HDD 
+    - suited for work with smaller blocks
+    - databases using transactional workloads
+    - used for boot volumes often on EC2 instances
+    - General Purpose SSD
+        - provides single digit latency, 3000 IOPS
+        - baseline of 3 iops - 10,000 iops
+        - throughput of 128 mbs up to 170gb
+        - increases to 160mb for 214 GB+ volumes
+    - Provision IOPS
+        - enhanced predictable performance 
+        - specifi IOPS rate during new EBS Volume
+        - Volumes attached to EBS optimized instances will deliver
+          iops defined within 10%, 99% of time
+        - range from 4-16tb
+        - max iops 20000
+    HDD
+        - designed for high rate of throughput
+        - processing big data
+        - larger blocks of data
+        - Cold HDD
+            -lowest cost
+            - large workloads accessed infrequently
+            - high throughput capabilities
+            - burst up to 80mbs per tb
+            - max burst of 250mbs
+            - delivers 99% of expected throughput
+            - Cant use as a boot volume for instances
+        - throughput optimized 
+            - frequently accessed data
+            - suited to work with large data sets
+            - 250mbps
+            - burst of 500mbps
+            - not possible to boot
+Encryption
+    - offers encryption at rest and in transit.
+    - managed by EBS itself
+    - enabled by checkbox
+    - used AES-256, interacts with AWS KMS
+        - dek, cmk
+Create New EBS Volume
+    2 ways
+        - during creation of EC2 instance
+        - standalone EBS volume
+changing the size of EBS Volume
+    - elastically scalable
+    - Increase the volume size via the AWS Mgmt Console or AWS capabilities
+    - extend file system after increase 
+    - possible to resize a volume by creating a new volume from a Snapshot
+    - charges are billed on a per second basis and per router
+EBS not well suited for all storage requirements
+    
+    

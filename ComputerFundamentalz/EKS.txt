@@ -1,0 +1,53 @@
+Elastic conainer for Kubernetes
+
+Kubernetes
+    - is an open source conainer orchestration tool designed to automate, deploy
+     scale, and operating containerized applications
+     - designed to go from 10s - millions of containers
+AWS provides managed service to run Kubernetes across AWS infrastructure
+without have to take care of provisioning and running Kubernetes management
+infrastructure in whats referred to as the control plane.
+
+Kubernetes Control plane
+    -different components that make up the control plane and these include a number
+     of different api's, the kubelet processes and kubernetes master
+    - the control planes schedules containers onto nodes
+    - also tracks the state of all kubernetes objects by monitoring objects
+    - In EKS, AWS is responsible for provisioning, scaling, and managing the control plane,
+      and they do this by utilizing multiple availability zones for additional resilence
+
+    Worker nodes
+        - kubernetes is composed of nodes
+        - a node is a worker machine
+        - it runx as an on demand ec2 instance and includes software to run on containers
+        - For each node created, a specific ami is used, which ensure docker kubelet in addition
+          to the AWS IAM authenticator
+        - once the worker nodes are provisioned, they can connect to EKU using an endpoint
+    Working with EKS
+        1. Create an EKS service responsible
+            - configure and creat IAM service role that allows EKS to provision and
+              configure specific resources
+            - the role needs to have the following permission policies attached
+              to the role: AmazonEKSServicePolicy, AmazonEKSClusterPolicy
+        2. Create an EKS Cluster VpC
+            - Using AWS Cloud Formation will create a new vpc for you with EKS
+        3. Install kubectl and AWS IAM authenticator
+            - Command line utitlity for Kubernetes and can be install following
+              details supplied here
+            - docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+            - The IAM authenticator is required to authenticate with EKS
+        4. Create EKS Cluster
+            - can now create EKS cluter using the details and info from the 
+              vpc in step 1 and 2
+        5. Configure kubectl for EKS
+            - using the update-kubeconfig command via AWS CLI you need to create
+              a kube config file for EKS Cluste
+        6. Provision and configure worker nodes
+            - Once your EKS cluter shows an active status, launch your worker nodes using 
+              cloud formation 
+        7. Configure the worker node to join the EKS Cluster
+            - download EKS Configuration map from AMazon 
+            - edit and replace the <ARN of instance role(not instance PROfile)>
+              with the NodeInstanceRole value from step 6
+        EKS cluster and worker nodes are now configured ready for you to deploy your 
+        applications with Kubernetes

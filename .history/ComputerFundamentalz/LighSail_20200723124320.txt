@@ -1,0 +1,22 @@
+Lightsail is essentially a VPS backed by AWS infrastructure, much like an EC2 isntance,
+but without as many configurable steps throughouot its creation
+
+Designed to be simple, quick and easy to use at a low cost point for small scale
+use cases by small businesses or single users
+    - host simple websites, blogs
+    - can run multiple instances together
+    - possible to connect via a peering connection
+    - by AWS console  or directly on the homepage of AWSs Lightsail
+
+Create instances
+    - location
+    - platform
+    - blueprint
+    - launch script, keypair
+    - define resources and monthly plan
+    - monthly cost is calculated 24 hrs * 31.25 hours
+    - nickname for instance, key tags etc
+    - create instance
+Connect via SSH
+    - given IP adderess
+    

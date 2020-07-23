@@ -1,0 +1,23 @@
+Ephimeral Storage: Block level Storage, temporary
+Not recommended for critical or valuable data
+If your instance is rebooted, data will remain intact
+
+Usage:
+    - no additional cost for Storage
+    - very high I/O speed
+    I3 instance family
+        - possible 3.3 million random IOPS 
+        - 1.4 million write IOPS 
+    - Instance store volumes are ideal as a cache or buffer for rapidly changing data 
+      without the need for retention
+    - Often used within a load balancing group where data is replicated and pooled
+      between the fleet
+Instance store volumes
+    - not available for all instances
+    - size of the volume will increase as you increase the EC2 isntance size
+    - store volumes have the same security as provided by EC2
+
+Anti Patterns
+    * Should not be used for
+        - persistent data
+        - data aceessed or sharded by multiple entities

@@ -1,0 +1,33 @@
+Software that is installed within data center which allows integration between
+your on premise storage and that of AWS.  
+    - Downloaded as a Virtual Machine.
+3 different configs
+    File Gateway: 
+        - allow you to securely store your files as objects within s3
+        - Ability to mount or map drives to an s3 bucket as if it were held  locally
+    Volume Gateway
+        - Used to backup local volumes to s3
+        - local data remains on premise ensuring low latency access
+        - be between 1 GB and 16 GB
+        - storage buffer using on premise storage is used as a staging point
+        - AMI Templates can provide Disaster recovery access to on  premise apps
+        - EBS volumes can be attached
+        cached volume gateways
+            - primary data stored on s3
+            - local data storage is used for buffering and a local cache for recently accessed 
+              data
+            - support up to 32 32 TB cached volumes
+            - Total storage capacity of 1025 TB cached
+            - Snapshots can be stored as EBS Snapshots
+
+    Tape Gateway
+        - backup data to s3 from data center
+        - leverage glacier for data archivin
+        - cloud based backup  solution, replacing physical components with Virtual
+          ones, while utilizing existing tape backup application infrastructure
+    VTL components
+        - storage gateway/:  
+         as a tape gateway as VTL with capacity of 
+        1500 virtual Templates
+        - Virtual tapes equivalent to a tape cartridge with a capacity of 100 gb-2.5 tb.
+          Data stored backed by amazon s3 and visible in virtual tape library
